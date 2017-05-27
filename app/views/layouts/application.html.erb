@@ -9,6 +9,9 @@
   </head>
 
   <body>
+
     <%= yield %>
+    <%= render_flickr_sidebar_widget(params[:flickr_id]) if params[:flickr_id]%>
+    
   </body>
 </html>

@@ -1,0 +1,13 @@
+<div class="flickr">
+  <ul>
+    <% @photos.each do |row| %>
+      <li>
+        <% row.each do |photo| %>
+          <% url = "https://farm#{photo.farm}.staticflickr.com/#{photo.server}/#{photo.id}_#{photo.secret}.jpg" %>
+          <%= link_to(image_tag(url, title: photo.title, border: 0, :size => '75x75', class: 'flickr_photo'),
+          flickr.photos.getSizes(photo_id: photo.id)[6].url ) %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
